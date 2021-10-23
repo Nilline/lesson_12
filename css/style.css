@@ -425,7 +425,7 @@ div[class*="__container"] {
 	height: 82px;
 	position: absolute;
 	top: 4px;
-	left: 7px;
+	left: 6px;
 	transform: skew(-51deg);
 	transform-origin: top left;
 	border-radius: 50% 0 30% 0;
