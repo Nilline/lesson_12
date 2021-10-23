@@ -90,12 +90,16 @@ div[class*="__container"] {
 	content: "";
 	background-color: #000;
 	width: 100%;
-	height: 55px;
+	height: 58px;
 	position: absolute;
 	bottom: -55px;
 	left: 0;
 	z-index: 2;
 	border-radius: 50%;
+}
+.block-basic::before {
+	filter: blur(1.8px);
+	transform: scalex(0.98);
 }
 .block-basic::after {
 	background: #c2c3c7;
