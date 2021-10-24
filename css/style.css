@@ -356,7 +356,7 @@ div[class*="__container"] {
 	background-color: #000;
 }
 .window-basic__inside {
-	background-color: #100f0e;
+	background: #100f0e url('../img/photo.png') top right 90px / 105px 100px no-repeat;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -365,6 +365,20 @@ div[class*="__container"] {
 	transform: translate(-50%, -50%) scale(0.88);
 	border-radius: inherit;
 	filter: blur(0.5px);
+}
+.window-basic__inside::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(44, 44, 44, 0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	transition: all 0.8s linear 0s;
+}
+.window-basic__inside:hover::before{
+	transform: translate(0px,100%);
 }
 .window-basic__windshield {
 	width: 102%;
@@ -394,7 +408,7 @@ div[class*="__container"] {
 		linear-gradient(to right, #000 0%, #000 45%, #68686a 60%, #000 75%, #000 100%);
 	position: absolute;
 	bottom: 0;
-	right: 39px;
+	right: 46px;
 	transform: skew(-15deg);
 	border-radius: 30% 5% 0 0;
 	filter: blur(0.6px);
