@@ -69,14 +69,14 @@ div[class*="__container"] {
 /* ======================================================================================================================================================== */
 .car {
 	min-height: 100vh;
-	background: url('../img/bg.jpg') bottom left / cover no-repeat;
+	background: url("../img/bg.jpg") bottom left / cover no-repeat;
 	position: relative;
 }
 .block-basic {
 	position: absolute;
 	bottom: 25%;
 	left: 50%;
-	transform: translate( -50%, 0%);
+	transform: translate(-50%, 0%);
 }
 .block-basic__main::before {
 	content: "";
@@ -273,7 +273,6 @@ div[class*="__container"] {
 	border-radius: 10px 0 0 0 / 20px 0 0 0;
 	z-index: 47;
 	border-left: 1px solid #e0dfe4;
-	
 }
 .door-basic__shadow {
 	position: absolute;
@@ -366,7 +365,7 @@ div[class*="__container"] {
 	background-color: #000;
 }
 .window-basic__inside {
-	background: #100f0e url('../img/photo.png') top right 90px / 105px 100px no-repeat;
+	background: #100f0e url("../img/photo.png") top right 90px / 105px 100px no-repeat;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -376,8 +375,7 @@ div[class*="__container"] {
 	border-radius: inherit;
 	filter: blur(0.5px);
 }
-.window-basic__inside::before {
-	content: "";
+.window-basic__window {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(44, 44, 44, 0.7);
@@ -386,9 +384,11 @@ div[class*="__container"] {
 	left: 0;
 	border-radius: inherit;
 	transition: all 0.8s linear 0s;
+	z-index: 2;
 }
-.window-basic__inside:hover::before{
-	transform: translate(0px,100%);
+
+.window-basic__inside:hover .window-basic__window{
+	transform: translate(0px, 100%);
 }
 .window-basic__windshield {
 	width: 102%;
@@ -399,6 +399,7 @@ div[class*="__container"] {
 	transform: translate(-50%, -50%);
 	box-shadow: 30px 5px 3px #000 inset, -19px -12px 3px #000 inset;
 	border-radius: inherit;
+	z-index: 3;
 }
 .window-basic__steering-wheel {
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0) 100%),
@@ -410,18 +411,20 @@ div[class*="__container"] {
 	left: 21px;
 	border-radius: 0 50% 0 30%;
 	filter: blur(0.6px);
+	z-index: 1;
 }
 .window-basic__sitting {
 	width: 40px;
 	height: 65px;
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0) 100%),
-		linear-gradient(to right, #000 0%, #000 45%, #68686a 60%, #000 75%, #000 100%);
+		linear-gradient(to right, rgb(48, 48, 48) 0%, rgb(48, 48, 48) 45%, #68686a 60%, #000 75%, #000 100%);
 	position: absolute;
 	bottom: 0;
 	right: 46px;
 	transform: skew(-15deg);
 	border-radius: 30% 5% 0 0;
 	filter: blur(0.6px);
+	z-index: 1;
 }
 .block-basic__top {
 }
