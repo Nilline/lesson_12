@@ -65,10 +65,35 @@ div[class*="__container"] {
 
 /* ======== PAGE ========================================================================================================================================== */
 .page {
-	padding: 300px 100px 100px;
 }
 /* ======================================================================================================================================================== */
+.car {
+	min-height: 100vh;
+	background: url('../img/bg.jpg') bottom left / cover no-repeat;
+	position: relative;
+}
 .block-basic {
+	position: absolute;
+	bottom: 25%;
+	left: 50%;
+	transform: translate( -50%, 0%);
+}
+.block-basic__main::before {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	bottom: -75px;
+	left: 0;
+	z-index: 2;
+	border-radius: 50%;
+}
+.block-basic__main::before {
+	filter: blur(1.8px);
+	transform: scalex(0.98);
+}
+.block-basic__main {
 	position: relative;
 	width: 908px;
 	height: 160px;
@@ -84,51 +109,17 @@ div[class*="__container"] {
 		linear-gradient(135deg, #afafb1 0%, #ceced0 100%);
 	border-radius: 326px 43px 77px 189px / 90px 89px 78px 35px;
 	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4), -3px 1px 3px rgba(0, 0, 0, 0.4);
-}
-.block-basic::before,
-.block-basic::after {
-	content: "";
-	background-color: #000;
-	width: 100%;
-	height: 58px;
-	position: absolute;
-	bottom: -55px;
-	left: 0;
-	z-index: 2;
-	border-radius: 50%;
-}
-.block-basic::before {
-	filter: blur(1.8px);
-	transform: scalex(0.98);
-}
-.block-basic::after {
-	background: #c2c3c7;
-	width: 120%;
-	height: 235px;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, 0%);
-	z-index: -1;
-	box-shadow: 0px 0px 30px #000 inset, 10px 15px 15px rgba(0, 0, 0, 0.8), -10px 0px 15px rgba(0, 0, 0, 0.8);
+	z-index: 1;
 }
 .block-basic__wheel {
 	padding: 10px;
-	background-color: #010101;
+	background: linear-gradient(to bottom, #010101 0%, #010101 70.8%, #01010100 70.8%);
 	border-radius: 50% 50% 40% 40%;
 	width: 166px;
 	height: 166px;
 	position: absolute;
 	bottom: -48px;
-}
-.block-basic__wheel::before {
-	content: "";
-	background-color: #c2c3c7;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 48px;
-	z-index: 0;
+	z-index: 2;
 }
 .block-basic__wheel_left {
 	left: 95px;
@@ -153,13 +144,13 @@ div[class*="__container"] {
 	left: 247px;
 	z-index: 51;
 	text-transform: uppercase;
-	color: #8F9094;
+	color: #8f9094;
 	font-size: 10px;
 	font-weight: 700;
-	background: linear-gradient(to right, #696A6E 0%, #8F9094 100%);
+	background: linear-gradient(to right, #696a6e 0%, #8f9094 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	color: #696A6E;
+	color: #696a6e;
 }
 .block-basic__disk {
 	width: 115px;
@@ -281,7 +272,7 @@ div[class*="__container"] {
 	transform: translate(-59%, 0%) rotate(-1.5deg);
 	border-radius: 10px 0 0 0 / 20px 0 0 0;
 	z-index: 47;
-	border-left: 1px solid #E0DFE4;
+	border-left: 1px solid #e0dfe4;
 }
 .door-basic__pen {
 	position: absolute;
@@ -289,7 +280,7 @@ div[class*="__container"] {
 	right: 30px;
 	width: 45px;
 	height: 11px;
-	border: 1px solid #AEAFB3;
+	border: 1px solid #aeafb3;
 	border-radius: 2px;
 	transform: skew(-40deg);
 }
@@ -297,9 +288,9 @@ div[class*="__container"] {
 	position: absolute;
 	top: 50%;
 	left: 6px;
-	transform: translate( 0%, -50%) skew(40deg);
+	transform: translate(0%, -50%) skew(40deg);
 	border-radius: 50%;
-	background-color: #BDBEC2;
+	background-color: #bdbec2;
 	width: 5px;
 	height: 5px;
 }
@@ -307,8 +298,8 @@ div[class*="__container"] {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate( -50%, -50%);
-	background-color: #9D9EA2;
+	transform: translate(-50%, -50%);
+	background-color: #9d9ea2;
 	border-radius: 50%;
 	width: 2px;
 	height: 2px;
@@ -365,7 +356,7 @@ div[class*="__container"] {
 	background-color: #000;
 }
 .window-basic__inside {
-	background-color: #c2c3c7;
+	background-color: #100f0e;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -441,7 +432,14 @@ div[class*="__container"] {
 	transform: skew(-51deg);
 }
 .window-basic__windshield::after {
-	background: linear-gradient(to top, rgba(242, 242, 244, 1) 0%, rgba(242, 242, 244, 1) 5.6%, #313236 5.6%, #313236 60%, #000 100%);
+	background: linear-gradient(
+		to top,
+		rgba(242, 242, 244, 1) 0%,
+		rgba(242, 242, 244, 1) 5.6%,
+		#313236 5.6%,
+		#313236 60%,
+		#000 100%
+	);
 }
 /* ======================================================================================================================================================== */
 .block-basic__rear-part {
@@ -453,7 +451,7 @@ div[class*="__container"] {
 	right: 17px;
 	transform: translate(0px, -35%) rotate(9deg);
 	border-radius: 0 50% 50% 0;
-	z-index: -1;
+	z-index: 0;
 	overflow: hidden;
 }
 .rear-part-basic {
@@ -471,7 +469,7 @@ div[class*="__container"] {
 }
 .rear-part-basic__window::before {
 	content: "";
-	border-left: 1px solid #C4C3C8;
+	border-left: 1px solid #c4c3c8;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -483,7 +481,7 @@ div[class*="__container"] {
 	right: 50px;
 }
 .trunk-back {
-	border: 1px solid #B7B6BB;
+	border: 1px solid #b7b6bb;
 	width: 20px;
 	height: 8px;
 	transform: skew(-30deg);
@@ -508,6 +506,7 @@ div[class*="__container"] {
 	transform: skew(-15deg) rotate(-5deg);
 	border-radius: 62px 48px 94px 45px / 174px 14px 52px 57px;
 	overflow: hidden;
+	z-index: 2;
 }
 .block-basic__front-light > *:not(:last-child)::after {
 	content: "";
@@ -540,6 +539,7 @@ div[class*="__container"] {
 	transform: skew(7deg);
 	border-radius: 10px 98px 39px 102px / 12px 257px 79px 335px;
 	overflow: hidden;
+	z-index: 2;
 }
 .back-front > *:not(:last-child)::after {
 	content: "";
@@ -547,7 +547,7 @@ div[class*="__container"] {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	border: 1px solid #96959A;
+	border: 1px solid #96959a;
 	filter: blur(0.6px);
 }
 .light-back__top {
